@@ -6,8 +6,9 @@ Convert ES5 to ES6:
 1) 
 function sum(x,y){
   return x+y
-}
+}*/
 
+/*
 2) 
 function consoleReturn(x,y){
   console.log(x)
@@ -36,17 +37,35 @@ var object2={
 */
 
 //1) WRITE YOUR CODE UNDER THIS LINE         
+ sum((num1,num2)=>(
+  ( num1+num2)
+ ));
+ 
+//2) WRITE YOUR CODE UNDER THIS LINE   
+consoleReturn((str1,str2) => (
+  console.log(str1)
+(str2)
+));    
 
-//2) WRITE YOUR CODE UNDER THIS LINE         
-
-//3) WRITE YOUR CODE UNDER THIS LINE         
+//3) WRITE YOUR CODE UNDER THIS LINE
+var name="Alex"
+var age=25
+var result=$("My name is: "+name + "and my age is: " + age)       
 
 //4) WRITE YOUR CODE UNDER THIS LINE         
-
+ obj((food,color)=>(
+food=this.food,
+color=this.color
+ ));
 //5) WRITE YOUR CODE UNDER THIS LINE         
+let object={
+  multi(num1,num2){
+    num1*num2
+  }
+}
 
 
-
+ 
 
 
 
@@ -73,7 +92,20 @@ Output =>
 */
 
 // WRITE YOUR CODE UNDER THIS LINE
+class Computer{
+  constructor(OS,RAM,CPU){
+    OS=this.OS;
+    RAM=this.RAM;
+    CPU=this.CPU;
 
+
+  }
+  doubleRam(){
+  function doubleRAM(){
+    return RAM*2;
+  }
+  }
+}
 
 
 
@@ -86,21 +118,24 @@ please fix the errors inside them
 */
 
 // App Component
+import React, { Component } from 'react';
 import Tasks from './components/Tasks';
-
 export default class App extends Component {
   state = {
     title: 'ELIZABETH GREENE',
     todos: ['eat', 'eat eat', 'eact again']
   };
   changeTitle() {
-    state.title = 'AGGREGOR ZOLDYCK'
+    this.setState({
+    title = 'AGGREGOR ZOLDYCK'})
   }
   render() {
     return (
+      <>
       <h1>App Component => state.title</h1>
       <button onClick={this.changeTitle}>Change Title</button>
       <Tasks tasks={this.todos} changeTitleFromChild={this.changeTitle} />
+      </>
     );
   }
 }
@@ -113,15 +148,16 @@ class Tasks extends Component {
     day: "Sat"
   };
   changeDay() {
-    day = 'Sun'
+    this.setState({
+    day = 'Sun'})
   }
-
+  
   render() {
     return (
       <div>
         <h1>Tasks Component => state.day</h1>
         <button onClick={this.changeDay}>Change Tasks State</button>
-        <button onClick={changeTitle}>Change App State</button>
+        <button onClick={changeTitleFromChild}>Change App State</button>
       </div>
     );
   }
